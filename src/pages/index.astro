@@ -1,0 +1,86 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Badge from "../components/Badge.astro";
+import SectionContainer from "../components/SectionContainer.astro";
+import LinkedInIcon from "../components/icons/LinkedInIcon.astro";
+import BriefCaseIcon from "../components/icons/BriefCaseIcon.astro";
+import SocialPill from "../components/SocialPill.astro";
+import GitHubIcon from "../components/icons/GitHubIcon.astro";
+import EmailIcon from "../components/icons/EmailIcon.astro";
+import Experience from "../components/Experience.astro";
+import CodeIcon from "../components/icons/CodeIcon.astro";
+import Projects from "../components/Projects.astro";
+
+---
+
+<Layout
+	title="MXR's portfolio - Software Developer"
+	description="Contract MXR to create your software application. Fullstack .NET Developer. Specialized in creating unique applications."
+>
+	<main class="px-4">
+		<SectionContainer class="py-44 pb-32">
+			<img
+				class="rounded-full size-16 mb-4"
+				src="../src/images/mxrdev-photo.jpg"
+				alt="mxrdev photo"
+			/>
+			<h1
+				class="text-white text-3xl md:text-4xl lg:text-5xl font-bold flex flex-row gap-x-4 pb-6 lg:pb-10"
+			>
+				Hey, I'm MXR <a
+					href="https://www.linkedin.com/in/marianella-cabrera-ahumada-8490a711a/"
+					target="_blank"
+					rel="noopener"
+					class="flex justify-center items-center"
+				>
+					<Badge>Available for work</Badge>
+				</a>
+			</h1>
+			<h2 class="text-xl lg:text-2xl text-wrap max-w-[700px]">
+				<span>+9 years of experience.</span>
+				<span class="text-violet-600/90">Fullstack .NET Developer.</span
+				>
+				<span class="text-violet-300/90"
+					>From Buenos Aires, Argentina.</span
+				>
+				<span class="opacity-75"
+					>Specialized in creating unique apps.</span
+				>
+			</h2>
+
+			<nav class="flex gap-4 mt-8 flex-wrap">
+				<SocialPill
+					href="https://www.linkedin.com/in/marianella-cabrera-ahumada-8490a711a/"
+				>
+					<LinkedInIcon class="size-4 md:size-6" />
+					LinkedIn
+				</SocialPill>
+				<SocialPill href="#">
+					<GitHubIcon class="size-4 md:size-6" />
+					GitHub
+				</SocialPill>
+				<SocialPill href="#">
+					<EmailIcon class="size-4 md:size-6" />
+					mar.cabahu@gmail.com
+				</SocialPill>
+			</nav>
+		</SectionContainer>
+
+		<SectionContainer id="work-experience">
+			<h2 class="text-3xl font-semibold mb-6 flex gap-x-3 items-center">
+				<BriefCaseIcon class="size-7"></BriefCaseIcon>
+				Work Experience
+			</h2>
+			<Experience />
+		</SectionContainer>
+
+		<SectionContainer id="projects">
+			<h2 class="text-3xl font-semibold mb-6 flex gap-x-3 items-center">
+				<CodeIcon class="size-8"></CodIcon>
+				Projects
+			</h2>
+			<Projects />
+		</SectionContainer>
+
+	</main>
+</Layout>
