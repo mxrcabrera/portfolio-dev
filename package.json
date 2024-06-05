@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
-    "build": "move src\\images dist\\ && astro check && astro build",
+    "build": "astro check && astro build && copy src/images dist",
     "preview": "astro preview",
     "astro": "astro"
   },
@@ -16,5 +16,8 @@
     "astro": "^4.9.2",
     "tailwindcss": "^3.4.3",
     "typescript": "^5.4.5"
+  },
+  "devDependencies": {
+    "copy": "^0.3.2"
   }
 }
