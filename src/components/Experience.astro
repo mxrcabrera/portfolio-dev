@@ -1,88 +1,63 @@
 ---
-const EXPERIENCIE = [
-  {
-    date: "Currently...",
-    title: "Lorem ipsum",
-    company: "Lorem ipsum",
-    description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-    link: "https://twitch.tv/midudev",
-  },
-  {
-    date: "Miau 202X",
-    title: "Lorem ipsum",
-    company: "Lorem ipsum",
-    description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-  },
-]
+
+const EXPERIENCE = [
+    {
+        date: "2024",
+        title: "Fullstack .NET developer",
+        company: "Solvo Global",
+        description:
+            "My standout milestone was spearheading the thrilling Defy-ED project, an oasis of knowledge and commerce dedicated to addressing erectile dysfunction. On this journey, my contribution transcended mere coding; I boldly formulated the business requirements, forged innovative new features, and safeguarded software integrity through meticulous testing. My passionate approach to every line of code and dedication to enhancing product quality have left a lasting mark on this impactful endeavor.",
+        link: "https://twitch.tv/midudev",
+    },
+    {
+        date: "2022",
+        title: ".NET Engineer",
+        company: "CH2 Solutions",
+        description:
+            "My greatest milestone was leading the transformation of Frontsteps, a residential community management platform, into a digital oasis of efficiency and collaboration. From research to deployment, my journey was marked by relentless pursuit of excellence. I boldly merged emerging technologies like Blazor and .NET Core 7, optimized performance through code enhancements, and led a passionate team towards crafting solutions that not only revolutionized residential management but also inspired tangible change in how communities connect and thrive.",
+    },
+];
+
 ---
 
 <ol class="relative border-s border-gray-200 dark:border-gray-700">
-    <li class="mb-10 ms-4">
-        <div
-            class="absolute w-3 h-3 bg-gray-200 rounded-full mt-1.5 -start-1.5 border border-white dark:border-gray-900 dark:bg-gray-700"
-        >
-        </div>
-        <time
-            class="mb-1 text-sm font-normal leading-none text-gray-400 dark:text-gray-500"
-            >Miau 202X</time
-        >
-        <h3 class="text-lg font-semibold text-violet-900 dark:text-white">
-            Lorem ipsum
-        </h3>
-        <p class="mb-4 text-base font-normal text-gray-500 dark:text-gray-400">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-        </p>
-        <a
-            href="#"
-            class="inline-flex items-center px-4 py-2 text-sm font-medium text-gray-900 bg-white border border-gray-200 rounded-lg hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:outline-none focus:ring-gray-100 focus:text-blue-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700 dark:focus:ring-gray-700"
-            >Learn more <svg
-                class="w-3 h-3 ms-2 rtl:rotate-180"
-                aria-hidden="true"
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 14 10"
-            >
-                <path
-                    stroke="currentColor"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    d="M1 5h12m0 0L9 1m4 4L9 9"></path>
-            </svg></a
-        >
-    </li>
-    <li class="mb-10 ms-4">
-        <div
-            class="absolute w-3 h-3 bg-gray-200 rounded-full mt-1.5 -start-1.5 border border-white dark:border-gray-900 dark:bg-gray-700"
-        >
-        </div>
-        <time
-            class="mb-1 text-sm font-normal leading-none text-gray-400 dark:text-gray-500"
-            >Miau 202X</time
-        >
-        <h3 class="text-lg font-semibold text-violet-900 dark:text-white">
-            Lorem ipsum
-        </h3>
-        <p class="text-base font-normal text-gray-500 dark:text-gray-400">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-        </p>
-    </li>
-    <li class="ms-4">
-        <div
-            class="absolute w-3 h-3 bg-gray-200 rounded-full mt-1.5 -start-1.5 border border-white dark:border-gray-900 dark:bg-gray-700"
-        >
-        </div>
-        <time
-            class="mb-1 text-sm font-normal leading-none text-gray-400 dark:text-gray-500"
-            >Miau 202X</time
-        >
-        <h3 class="text-lg font-semibold text-violet-900 dark:text-white">
-            Lorem ipsum
-        </h3>
-        <p class="text-base font-normal text-gray-500 dark:text-gray-400">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-        </p>
-    </li>
+    {
+        EXPERIENCE.map(({ date, title, company, description }) => (
+            <li class="mb-10 ms-4">
+                <div class="absolute w-3 h-3 bg-gray-200 rounded-full mt-1.5 -start-1.5 border border-white dark:border-gray-900 dark:bg-gray-700" />
+                <time class="mb-1 text-sm font-normal leading-none text-gray-400 dark:text-gray-500">
+                    {date} | <span class="text-md text-white">{company}</span>
+                </time>
+                <h3 class="text-lg font-semibold text-violet-900 dark:text-white">
+                    {title}
+                </h3>
+                <p class="mb-4 text-base font-normal text-gray-500 dark:text-gray-400">
+                    {description}
+                </p>
+            </li>
+        ))
+    }
 </ol>
+
+<div class="mt-4">
+    <a
+        href="#"
+        class="inline-flex items-center px-4 py-2 text-sm font-medium text-gray-900 bg-white border border-gray-200 rounded-lg hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:outline-none focus:ring-gray-100 focus:text-blue-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700 dark:focus:ring-gray-700"
+    >
+        Learn more{" "}
+        <svg
+            class="w-3 h-3 ms-2 rtl:rotate-180"
+            aria-hidden="true"
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 14 10"
+        >
+            <path
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M1 5h12m0 0L9 1m4 4L9 9"></path>
+        </svg>
+    </a>
+</div>
