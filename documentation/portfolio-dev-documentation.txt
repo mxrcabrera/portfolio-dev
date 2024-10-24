@@ -1,0 +1,42 @@
+1. Instalar Bun
+Para instalar Bun, puedes usar el siguiente comando en tu terminal:
+
+bash
+Copiar código
+curl -fsSL https://bun.sh/install | bash
+2. Configurar tu entorno
+Después de la instalación, asegúrate de que el directorio ~/.bun/bin esté en tu variable de entorno PATH. Puedes hacerlo agregando la siguiente línea a tu archivo de configuración de shell (~/.bashrc, ~/.zshrc, ~/.profile, etc.):
+
+bash
+Copiar código
+export PATH="$HOME/.bun/bin:$PATH"
+Después de editar tu archivo de configuración, recarga el shell:
+
+bash
+Copiar código
+source ~/.bashrc  # o el archivo que hayas modificado
+3. Verificar la instalación
+Verifica que Bun esté correctamente instalado ejecutando:
+
+bash
+Copiar código
+bun --version
+Deberías ver la versión de Bun instalada.
+
+4. Crear un proyecto Astro con Bun
+Una vez que Bun esté instalado y configurado, puedes crear un proyecto Astro usando Bun:
+
+bash
+Copiar código
+bun create astro@latest
+Problemas comunes y solución
+El comando bun no se reconoce:
+
+Asegúrate de que el directorio ~/.bun/bin esté en tu PATH.
+Verifica que Bun esté instalado correctamente y que no haya errores durante la instalación.
+Recarga de la configuración de shell:
+
+Si agregaste export PATH="$HOME/.bun/bin:$PATH" a tu archivo de configuración de shell, asegúrate de recargarlo con source ~/.bashrc o abriendo una nueva terminal.
+Permisos:
+
+Si tienes problemas de permisos, asegúrate de que el directorio ~/.bun/bin y los archivos dentro de él sean ac

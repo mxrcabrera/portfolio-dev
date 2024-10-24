@@ -1,52 +1,76 @@
 ---
+import AstroIcon from "./icons/AstroIcon.astro";
 import NextJSIcon from "./icons/NextJSIcon.astro";
+import OptimizelyIcon from "./icons/OptimizelyIcon.astro";
 import TailwindIcon from "./icons/TailwindIcon.astro";
 
 const TAGS = {
     NEXT: {
         name: "Next.js",
-        class: "bg-black text-white",
+        class: "bg-[#1A1D1A] text-white", //4929b4
         icon: NextJSIcon,
+    },
+    ASTRO: {
+        name: "Astro",
+        class: "bg-[#1A1D1A] text-white",
+        icon: AstroIcon,
     },
     TAILWIND: {
         name: "Tailwind CSS",
-        class: "bg-[#4929b4] text-white",
+        class: "bg-[#1A1D1A] text-white",
         icon: TailwindIcon,
     },
+    OPTIMIZELY: {
+        name: "Optimizely",
+        class: "bg-[#1A1D1A] text-white",
+        icon: OptimizelyIcon,
+    },
 };
+
 const PROJECTS = [
     {
-        title: "SVGL - A beautiful library with SVG logos",
+        title: "ToDo App - Task Management",
         description:
-            "SVG logo library of the most popular brands. +10k views per month. +2K SVGs downloaded. Built from scratch with Next.js, React & Tailwind CSS.",
-        link: "https://svgl.vercel.app/",
-        github: "https://github.com/pheralb/svgl",
-        image: "/projects/svgl.webp",
-        tags: [TAGS.NEXT, TAGS.TAILWIND],
-    }
+            "A responsive and efficient ToDo application built using Next.js, Astro, and Tailwind CSS. The app allows users to create, manage, and track tasks with a clean UI and seamless user experience.",
+        link: "https://todoappbymxrcabrera.netlify.app/",
+        github: "https://github.com/mxrcabrera/todoapp",
+        image: "/projects/todoapp-image.jpg",
+        tags: [TAGS.NEXT, TAGS.ASTRO, TAGS.TAILWIND],
+    },
+    {
+        title: "Optimizely Mini Project",
+        description:
+            "A mini project showcasing my skills with Optimizely, including feature flags, A/B testing, responsive content personalization, and event tracking using React hooks.",
+        link: "https://techstorebymxrcabrera.netlify.app/",
+        github: "https://github.com/mxrcabrera/techstore",
+        image: "/projects/techstore-image.jpg",
+        tags: [TAGS.NEXT, TAGS.OPTIMIZELY],
+    },
 ];
 ---
 
-{
-    PROJECTS.map(({ image, title, description, tags }) => (
-        <article>
-            <h3 class="text-xl font-semibold text-violet-2000 mb-2">{title}</h3>
-            <p class="text-lg mb-4 text-pretty">{description}</p>
-            <ul class="flex gap-x-2 flex-row mb-4">
-                {tags.map((tag) => (
-                    <li>
-                        <span class={`flex gap-x-2 rounded-full text-xs ${tag.class} py-1 px-2`}>
-                            <tag.icon class="size-4"></tag.icon>
-                            {tag.name}
-                        </span>
-                    </li>
-                ))}
-            </ul>
-            <img
-                class="rounded shadow-2xl shadow-white/10"
-                src={image}
-                alt={`Project ${image} Screenshot`}
-            />
-        </article>
-    ))
-}
+<div class="flex flex-col gap-y-16">  { }
+    {
+        PROJECTS.map(({ image, title, description, tags }) => (
+            <article>
+                <h3 class="text-xl font-semibold text-violet-2000 mb-2">{title}</h3>
+                <p class="text-lg mb-4 text-pretty">{description}</p>
+                <ul class="flex gap-x-2 flex-row mb-4">
+                    {tags.map((tag) => (
+                        <li>
+                            <span class={`flex gap-x-2 rounded-full text-xs ${tag.class} py-1 px-2`}>
+                                <tag.icon class="size-4" />
+                                {tag.name}
+                            </span>
+                        </li>
+                    ))}
+                </ul>
+                <img
+                    class="rounded shadow-2xl shadow-white/10"
+                    src={image}
+                    alt={`Project ${image} Screenshot`}
+                />
+            </article>
+        ))
+    }
+</div>
