@@ -7,7 +7,7 @@ import TailwindIcon from "./icons/TailwindIcon.astro";
 const TAGS = {
     NEXT: {
         name: "Next.js",
-        class: "bg-[#1A1D1A] text-white", //4929b4
+        class: "bg-[#1A1D1A] text-white",
         icon: NextJSIcon,
     },
     ASTRO: {
@@ -49,11 +49,15 @@ const PROJECTS = [
 ];
 ---
 
-<div class="flex flex-col gap-y-16">  { }
+<div class="flex flex-col gap-y-16">
     {
-        PROJECTS.map(({ image, title, description, tags }) => (
+        PROJECTS.map(({ image, title, description, tags, link }) => (
             <article>
-                <h3 class="text-xl font-semibold text-violet-2000 mb-2">{title}</h3>
+                <h3 class="text-xl font-semibold text-violet-2000 mb-2">
+                    <a href={link} target="_blank" rel="noopener" class="hover:underline">
+                        {title}
+                    </a>
+                </h3>
                 <p class="text-lg mb-4 text-pretty">{description}</p>
                 <ul class="flex gap-x-2 flex-row mb-4">
                     {tags.map((tag) => (
@@ -65,11 +69,22 @@ const PROJECTS = [
                         </li>
                     ))}
                 </ul>
-                <img
-                    class="rounded shadow-2xl shadow-white/10"
-                    src={image}
-                    alt={`Project ${image} Screenshot`}
-                />
+                <a 
+                    href={link}
+                    target="_blank"
+                    rel="noopener"
+                    class="group relative block transition"
+                >
+                    <img
+                        loading="lazy"
+                        class="rounded shadow-2xl shadow-white/10 transition group-hover:scale-[1.02] group-hover:shadow-white/20"
+                        src={image}
+                        alt={`Screenshot of ${title}`}
+                    />
+                    <div class="absolute inset-0 rounded bg-black/50 opacity-0 transition-opacity group-hover:opacity-100 flex items-center justify-center">
+                        <span class="text-white text-lg font-semibold">Visit Project →</span>
+                    </div>
+                </a>
             </article>
         ))
     }

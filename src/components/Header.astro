@@ -6,30 +6,53 @@
         sticky top-0
         w-full xl:w-[1120px]
         z-10
+        transition-all duration-300 ease-in-out
     `}
+    id="header"
 >
     <nav
         class={`
-            rounded
-            px-3 py-1
+            border border-white/10
+            rounded-full
+            px-4 py-2
             flex flex-row items-center
             gap-x-10
-            dark:bg-black/50
+            dark:bg-black/40
             backdrop-blur-2xl
             text-xs md:text-sm
+            shadow-lg shadow-black/5
         `}
     >
-        <a class="hover:bg-white/10 rounded-full px-1 transition" href="/#work-experience"
+        <a class="hover:bg-white/10 rounded-full px-3 py-1 transition" href="/#work-experience"
             >Work Experience</a
         >
-        <a class="hover:bg-white/10 rounded-full px-1 transition" href="/#projects"
+        <a class="hover:bg-white/10 rounded-full px-3 py-1 transition" href="/#projects"
             >Projects</a
         >
-        <a class="hover:bg-white/10 rounded-full px-1 transition" href="/#about-me"
+        <a class="hover:bg-white/10 rounded-full px-3 py-1 transition" href="/#about-me"
             >About me</a
         >
-        <a class="hover:bg-white/10 rounded-full px-1 transition" href="/#contact"
+        <a class="hover:bg-white/10 rounded-full px-3 py-1 transition" href="/#contact"
             >Contact</a
         >
     </nav>
 </header>
+
+<script>
+    const header = document.getElementById('header')
+    
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 0) {
+            header?.classList.add('scrolled')
+        } else {
+            header?.classList.remove('scrolled')
+        }
+    })
+</script>
+
+<style>
+    .scrolled nav {
+        @apply bg-black/50 border-white/20;
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+    }
+</style>
