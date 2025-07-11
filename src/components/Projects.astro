@@ -1,7 +1,9 @@
 ---
 import AstroIcon from "./icons/AstroIcon.astro";
 import NextJSIcon from "./icons/NextJSIcon.astro";
+import NodeIcon from "./icons/NodeIcon.astro";
 import OptimizelyIcon from "./icons/OptimizelyIcon.astro";
+import PostgresIcon from "./icons/PostgresIcon.astro";
 import TailwindIcon from "./icons/TailwindIcon.astro";
 
 const TAGS = {
@@ -35,17 +37,27 @@ const TAGS = {
         class: "bg-[#1A1D1A] text-white", 
         icon: AstroIcon,
     },
+    POSTGRES: {
+        name: "PostgreSQL",
+        class: "bg-[#1A1D1A] text-white",
+        icon: PostgresIcon,
+    },
+    NODE: {
+        name: "Node.js",
+        class: "bg-[#1A1D1A] text-white",
+        icon: NodeIcon,
+    },
 };
 
 const PROJECTS = [
     {
-        title: "ToDo App - Task Management",
+        title: "Modular Survey SDK & Analytics API",
         description:
-            "A responsive and efficient ToDo application built using Next.js, Astro, and Tailwind CSS. The app allows users to create, manage, and track tasks with a clean UI and seamless user experience.",
-        link: "https://todoappbymxrcabrera.netlify.app/",
-        github: "https://github.com/mxrcabrera/todoapp",
-        image: "/projects/todoapp-image.jpg",
-        tags: [TAGS.NEXT, TAGS.ASTRO, TAGS.TAILWIND],
+            "Reusable React/TypeScript SDK plus a Node/Express API to serve surveys, collect answers and expose aggregated metrics. PostgreSQL for storage, strict typing and modular architecture. Extras: dark-mode UI, star-rating, real-time validation, progress bars, health-check endpoint.",
+        link: "https://survey-sdk-demo.netlify.app",
+        github: "https://github.com/mxrcabrera/survey-sdk",
+        image: "/projects/survey-sdk-image.jpg",
+        tags: [TAGS.REACT, TAGS.NODE, TAGS.TAILWIND, TAGS.POSTGRES],
     },
     {
         title: "Optimizely Mini Project",
